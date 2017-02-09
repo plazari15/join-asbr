@@ -34,24 +34,24 @@
                                     <div class="row form-group">
                                         <div class="col-lg-6">
                                             <label>Nome Completo</label>
-                                            <input class="form-control" type="text" name="nome">
+                                            <input class="form-control" type="text" name="nome" required>
                                         </div>
 
                                         <div class="col-lg-6">
                                             <label>Data de Nascimento</label>
-                                            <input class="form-control" type="text" name="data_nascimento">
+                                            <input class="form-control" type="text" name="data_nascimento" required>
                                         </div>
                                     </div>
 
                                     <div class="row form-group">
                                         <div class="col-lg-6">
                                             <label>Email</label>
-                                            <input class="form-control" type="text" name="email">
+                                            <input class="form-control" type="email" name="email" required>
                                         </div>
 
                                         <div class="col-lg-6">
                                             <label>Telefone</label>
-                                            <input class="form-control" type="text" name="telefone">
+                                            <input class="form-control" type="text" name="telefone" required>
                                         </div>
                                     </div>
 
@@ -75,7 +75,7 @@
                                     <div class="row form-group">
                                         <div class="col-lg-6">
                                             <label>Região</label>
-                                            <select class="form-control" name="regiao">
+                                            <select class="form-control" name="regiao" required>
                                                 <option value="">Selecione a sua região</option>
                                                 <option>Sul</option>
                                                 <option>Sudeste</option>
@@ -87,7 +87,7 @@
 
                                         <div class="col-lg-6">
                                             <label>Unidade</label>
-                                            <select class="form-control" name="unidade">
+                                            <select class="form-control" name="unidade" required>
                                                 <option value="">Selecione a unidade mais próxima</option>
                                                 <option>???</option>
                                             </select>
@@ -95,7 +95,7 @@
                                     </div>
 
                                     <div>
-                                        <button type="submit" class="btn btn-lg btn-info next-step">Enviar</button>
+                                        <button type="submit" class="btn btn-lg btn-info next-step" id="final_step">Enviar</button>
                                     </div>
                                 </fieldset>
                             </div>
@@ -126,6 +126,15 @@
                 $('.next-step').click(function (event) {
                     event.preventDefault();
                     $(this).parents('.form-step').hide().next().show();
+                });
+
+                $('#final_step').click(function (event) {
+                    event.preventDefault();
+                    var step1 = $('#step_1').serialize();
+                    var step2 = $('#step_2').serialize();
+
+                    console.log(step1);
+                    console.log(step2);
                 });
             });
         </script>
