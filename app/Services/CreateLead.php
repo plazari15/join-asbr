@@ -4,6 +4,7 @@ namespace App\Services;
 
 use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class CreateLead
 {
@@ -23,7 +24,16 @@ class CreateLead
 
     public function createLead()
     {
-        dd($this->getToken());
+        $data = [
+            'nome' => $this->request->nome,
+            'data_nascimento' => $this->request->data_nascimento,
+            'email' => $this->request->email,
+            'telefone' => $this->request->telefone,
+            'regiao' => $this->getRegiao(),
+            'unidade' => $this->getUnidade()->title,
+        ];
+        dd($data);
+        //DB::table('leads')->insert();
 
     }
 
@@ -106,6 +116,47 @@ class CreateLead
         if($birth >= 40 && $birth <= 99) {
             return '3';
         }
+    }
+
+    /**
+     * retorno a região do meu lead
+     * @return string
+     */
+    protected function getRegiao()
+    {
+        switch ($this->request->regiao){
+            case '1':
+                return 'Sul';
+                break;
+
+            case '2':
+                return 'Sudeste';
+                break;
+
+            case '3':
+                return 'Centro-Oeste';
+                break;
+
+            case '4':
+                return 'Nordeste';
+                break;
+
+            case '5':
+                return 'Norte';
+                break;
+        }
+    }
+    /**
+     * Através do meu banco de dados, eu retorno a unidade selecionada pelo usuário
+     * @return mixed
+     */
+    protected function getUnidade()
+    {
+        return DB::table('unity')
+            ->where('region_id', $this->request->regiao)
+            ->where('id', $this->request->unidade)
+            ->select('title')
+            ->first();
     }
 
 }
