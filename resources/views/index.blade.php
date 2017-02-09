@@ -87,7 +87,7 @@
 
                                         <div class="col-lg-6">
                                             <label>Unidade</label>
-                                            <select class="form-control" name="unidade" required>
+                                            <select class="form-control" name="unidade" id="units" required>
                                                 <option value="">Selecione a unidade mais próxima</option>
                                                 <option>???</option>
                                             </select>
@@ -152,17 +152,20 @@
                 //Este código obtem as unidades
                 $('.regiao').change(function () {
                     var regiao = $(this).serialize();
-                    alert(regiao);
                     $.ajax({
                         url: '/api/getRegion',
                         data: regiao,
                         type: 'GET',
                         dataType: 'JSON',
                         beforeSend: function(){
-                            alert('saiu');
-                        },
-                        success: function(){
                             //
+                        },
+                        success: function(RESPOSTA){
+                            console.log(RESPOSTA);
+                            $('#units option[value!=""]').remove();
+                            $.each(RESPOSTA.body, function(key, value) {
+                                $('#units').append('<option value="' + value.id + '">' + value.title + '</option>');
+                            });
                         }
 
                     });
