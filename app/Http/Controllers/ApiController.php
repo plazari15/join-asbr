@@ -26,7 +26,15 @@ class ApiController extends BaseController
         return response()->json(['body' => [['id' => '0', 'title' => 'não encontramos nenhum resultado']] ], 200);
     }
 
-    public function sendForm(){
-        return 'chegou aqui';
+    public function sendForm(Request $request){
+        $this->validate($request, [
+            'nome' => 'required',
+            'email' => 'required|email',
+            'telefone' => 'required|numeric',
+            'data_nascimento' => 'required|date_format:d/m/Y',
+            'regiao' => 'required|numeric',
+            'unidade' => 'required|numeric',
+        ]);
+        dd($request->all());
     }
 }
