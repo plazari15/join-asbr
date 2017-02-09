@@ -2,6 +2,7 @@
 
 namespace App\Services;
 
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 class CreateLead
@@ -17,13 +18,15 @@ class CreateLead
     {
         $this->request = $request;
 
-
+        
     }
+
+
 
     /**
      * Este método vai informar ao sistema quantos pontos deve remover do lead por ser de uma determinada região
      */
-    public function getPointsForRegion()
+    protected function getPointsForRegion()
     {
         switch ($this->request->regiao){
             case '1':
@@ -49,6 +52,30 @@ class CreateLead
                 return '-5';
                 break;
 
+        }
+    }
+
+    /**
+     * Metódo calcula a idade do usuário e com base nisso da a quantidade de pontos que devem ser removidos.
+     * @return string
+     */
+    protected function calculateUserBirth()
+    {
+        $birth = Carbon::createFromFormat('d/m/Y', $this->request->data_nascimento)
+            ->diff(Carbon::createFromFormat('d/m/Y', '01/11/2016'))
+            ->format('%y');
+
+        var_dump($birth);
+        if($birth >= 100 && $birth <= 18) {
+            return '-5';
+        }
+
+        if($birth >= 18 && $birth <= 39) {
+            return '0';
+        }
+
+        if($birth >= 40 && $birth <= 99) {
+            return '-3';
         }
     }
 

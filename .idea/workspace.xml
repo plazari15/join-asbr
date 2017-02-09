@@ -43,9 +43,11 @@
       <file leaf-file-name="CreateLead.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Services/CreateLead.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="863">
-              <caret line="52" column="5" lean-forward="true" selection-start-line="52" selection-start-column="5" selection-end-line="52" selection-end-column="5" />
-              <folding />
+            <state relative-caret-position="544">
+              <caret line="20" column="8" lean-forward="false" selection-start-line="20" selection-start-column="8" selection-end-line="20" selection-end-column="8" />
+              <folding>
+                <element signature="e#32#50#0#PHP" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -75,8 +77,8 @@
         <option value="$PROJECT_DIR$/routes/web.php" />
         <option value="$PROJECT_DIR$/resources/views/index.blade.php" />
         <option value="$PROJECT_DIR$/database/migrations/2017_02_09_051228_create_leads_table.php" />
-        <option value="$PROJECT_DIR$/app/Services/CreateLead.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/ApiController.php" />
+        <option value="$PROJECT_DIR$/app/Services/CreateLead.php" />
       </list>
     </option>
   </component>
@@ -305,12 +307,12 @@
       <option name="presentableId" value="Default" />
       <updated>1485203679824</updated>
       <workItem from="1486607116226" duration="5851000" />
-      <workItem from="1486616919815" duration="1271000" />
+      <workItem from="1486616919815" duration="2419000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="7122000" />
+    <option name="totallyTimeSpent" value="8270000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1920" height="1053" extended-state="6" />
@@ -528,9 +530,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Services/CreateLead.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="863">
-          <caret line="52" column="5" lean-forward="true" selection-start-line="52" selection-start-column="5" selection-end-line="52" selection-end-column="5" />
-          <folding />
+        <state relative-caret-position="544">
+          <caret line="20" column="8" lean-forward="false" selection-start-line="20" selection-start-column="8" selection-end-line="20" selection-end-column="8" />
+          <folding>
+            <element signature="e#32#50#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
