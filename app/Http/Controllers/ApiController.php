@@ -25,4 +25,8 @@ class ApiController extends BaseController
 
         return response()->json(['body' => [['id' => '0', 'title' => 'não encontramos nenhum resultado']] ], 200);
     }
+
+    public function sendForm(){
+        return 'chegou aqui';
+    }
 }

@@ -14,3 +14,4 @@
 $app->get('/', 'IndexController@index');
 
 $app->get('/api/getRegion', 'ApiController@getRegion');
+$app->post('/api/send', 'ApiController@sendForm');

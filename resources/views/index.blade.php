@@ -133,7 +133,6 @@
                 $('#final_step').click(function (event) {
                     event.preventDefault();
                     var form = $('#step_1,#step_2').serialize();
-
                     $.ajax({
                         url: '/api/send',
                         data: form,
