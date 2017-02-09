@@ -12,3 +12,5 @@
 */
 
 $app->get('/', 'IndexController@index');
+
+$app->get('/api/getRegion', 'ApiController@getRegion');

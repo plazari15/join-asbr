@@ -156,7 +156,7 @@
                     $.ajax({
                         url: '/api/getRegion',
                         data: regiao,
-                        type: 'POST',
+                        type: 'GET',
                         dataType: 'JSON',
                         beforeSend: function(){
                             alert('saiu');
