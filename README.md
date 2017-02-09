@@ -10,6 +10,17 @@ por isso eu irei conseguir realizar todas as necessidades e muito mais apenas co
 Eu tomei a liberdade de colocar online o projeto em meu próprio servidor, e por isso você pode visualizar online neste link
 [Landing-Page Pedro Lazari](http://asbr.pedrolazari.com)
 
+##Sobre o desafio 
+Eu criei um arquivo próprio dentro de App/Services que contem toda a minha lógica de desenvolvimento para o lead;
+
+Em App/http/Controller tem os meus controllers Index e Api;
+
+Em Resources, tem o arquivo do template com meus Javascripts lá também;
+
+Em database Migrations, tem meus arquivos de migrations e em Seeds tem meus seeds  usados na hora de criar as regioes e unidades; 
+
+Acredito ser apenas isso :D
+
 ## Sobre Mim
 
 Trabalho com desenvolvimento web desde os meus 15 anos, tendo realizado diversos cursos, dentre eles PHP orientado a Objetos pela Upinside e HTML 5 do Jeito Certo, acredito ser um 
