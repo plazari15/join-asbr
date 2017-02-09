@@ -132,9 +132,21 @@
                     event.preventDefault();
                     var step1 = $('#step_1').serialize();
                     var step2 = $('#step_2').serialize();
+                    alert('aqui');
 
-                    console.log(step1);
-                    console.log(step2);
+                    $.ajax({
+                        url: '/api/send',
+                        data: '',
+                        type: 'POST',
+                        dataType: 'JSON',
+                        beforeSend: function(){
+                            alert('saiu');
+                        },
+                        success: function(){
+                            //
+                        }
+
+                    });
                 });
             });
         </script>
