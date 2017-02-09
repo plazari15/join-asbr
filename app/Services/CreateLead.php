@@ -26,14 +26,19 @@ class CreateLead
     {
         $data = [
             'nome' => $this->request->nome,
-            'data_nascimento' => $this->request->data_nascimento,
+            'data_nascimento' => Carbon::createFromFormat('d/m/Y', $this->request->data_nascimento)->format('Y-m-d'),
             'email' => $this->request->email,
             'telefone' => $this->request->telefone,
             'regiao' => $this->getRegiao(),
             'unidade' => $this->getUnidade(),
+            'token' => $this->getToken(),
+            'score' => $this->getTotalPoints(),
+            'created_at' => Carbon::now(),
+            'updated_at' => Carbon::now()
         ];
-        dd($data);
-        //DB::table('leads')->insert();
+        if(DB::table('leads')->insert($data)){
+            //
+        }
 
     }
 
@@ -43,6 +48,7 @@ class CreateLead
      * @return bool|\Psr\Http\Message\StreamInterface
      */
     protected function getToken(){
+        
         $client = new \GuzzleHttp\Client();
         $data =  $client->request('GET', "http://api.actualsales.com.br/join-asbr/ti/token?email={$this->request->email}");
 
