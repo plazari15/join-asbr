@@ -1,21 +1,22 @@
-# Lumen PHP Framework
+# Desafio vaga ASBR
 
-[![Build Status](https://travis-ci.org/laravel/lumen-framework.svg)](https://travis-ci.org/laravel/lumen-framework)
-[![Total Downloads](https://poser.pugx.org/laravel/lumen-framework/d/total.svg)](https://packagist.org/packages/laravel/lumen-framework)
-[![Latest Stable Version](https://poser.pugx.org/laravel/lumen-framework/v/stable.svg)](https://packagist.org/packages/laravel/lumen-framework)
-[![Latest Unstable Version](https://poser.pugx.org/laravel/lumen-framework/v/unstable.svg)](https://packagist.org/packages/laravel/lumen-framework)
-[![License](https://poser.pugx.org/laravel/lumen-framework/license.svg)](https://packagist.org/packages/laravel/lumen-framework)
+Meu nome é Pedro Lazari, eu venho com este repositório apresentar a você meu projeto de landing page, eu achei que
+seria capaz de realizar o desafio.
 
-Laravel Lumen is a stunningly fast PHP micro-framework for building web applications with expressive, elegant syntax. We believe development must be an enjoyable, creative experience to be truly fulfilling. Lumen attempts to take the pain out of development by easing common tasks used in the majority of web projects, such as routing, database abstraction, queueing, and caching.
+Eu parti da instalação de um Lumen, escolhi o Lumen, pois trabalho com Laravel faz um tempo, e por estar 
+envolto em seu ecossistema, acho que seria algo mais fácil, o desafio não exige nenhuma funcionalidade muito completa, 
+por isso eu irei conseguir realizar todas as necessidades e muito mais apenas com o Lumen.
 
-## Official Documentation
+Eu tomei a liberdade de colocar online o projeto em meu próprio servidor, e por isso você pode visualizar online neste link
+[Landing-Page Pedro Lazari](http://asbr.pedrolazari.com)
 
-Documentation for the framework can be found on the [Lumen website](http://lumen.laravel.com/docs).
+## Sobre Mim
 
-## Security Vulnerabilities
+Trabalho com desenvolvimento web desde os meus 15 anos, tendo realizado diversos cursos, dentre eles PHP orientado a Objetos pela Upinside e HTML 5 do Jeito Certo, acredito ser um 
+profissional capacitado para o desenvolvimento de vários tipos de sistema em WordPress e em PHP puro.
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell at taylor@laravel.com. All security vulnerabilities will be promptly addressed.
+Já tive a oportunidade de trabalhar com o desenvolvimento de plugins e customização de temas para o CMS WordPress, além de desenvolver um ERP e um Ecommerce B2B em Laravel. 
 
-## License
+Atualmente, curso ciências da computação na USCS, 3º semestre. 
 
-The Lumen framework is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT)
+Minha paixão por desenvolvimento web e pelo aprendizado são bem grandes, e por conta disso, eu sempre estou em busca de novos conhecimentos e tecnologias.
