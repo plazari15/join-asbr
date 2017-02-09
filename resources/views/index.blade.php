@@ -130,13 +130,11 @@
 
                 $('#final_step').click(function (event) {
                     event.preventDefault();
-                    var step1 = $('#step_1').serialize();
-                    var step2 = $('#step_2').serialize();
-                    alert('aqui');
+                    var form = $('#step_1,#step_2').serialize();
 
                     $.ajax({
                         url: '/api/send',
-                        data: '',
+                        data: form,
                         type: 'POST',
                         dataType: 'JSON',
                         beforeSend: function(){
