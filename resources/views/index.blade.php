@@ -139,10 +139,13 @@
                         type: 'POST',
                         dataType: 'JSON',
                         beforeSend: function(){
-                            alert('saiu');
+
                         },
                         success: function(){
                             //
+                        },
+                        error: function(data){
+                            alert("alguma coisa não saiu como esperado. tente novamente mais tarde.");
                         }
 
                     });

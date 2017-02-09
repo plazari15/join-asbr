@@ -37,6 +37,10 @@ class ApiController extends BaseController
             'unidade' => 'numeric',
         ]);
         $lead = new CreateLead($request);
-        dd($lead->createLead());
+        if($lead->createLead()){
+            return response()->json(['message' => 'tudo certo'], 200);
+        }
+
+        return response()->json(['message' => 'tivemos um problema'], 500);
     }
 }

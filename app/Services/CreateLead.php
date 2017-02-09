@@ -37,7 +37,7 @@ class CreateLead
             'updated_at' => Carbon::now()
         ];
         if(DB::table('leads')->insert($data)){
-            //
+            return true;
         }
 
     }
@@ -48,7 +48,7 @@ class CreateLead
      * @return bool|\Psr\Http\Message\StreamInterface
      */
     protected function getToken(){
-        
+        //return 'códio_no_email';
         $client = new \GuzzleHttp\Client();
         $data =  $client->request('GET', "http://api.actualsales.com.br/join-asbr/ti/token?email={$this->request->email}");
 
