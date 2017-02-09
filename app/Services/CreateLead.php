@@ -23,8 +23,25 @@ class CreateLead
 
     public function createLead()
     {
-        dd($this->getTotalPoints());
+        dd($this->getToken());
 
+    }
+
+    /**
+     * O token esta sendo enviado por email, eu tentei de algumas formas obter ele por meio da api, mas o máximo de
+     * dados que consegui receber foi o código e uma mensagem.
+     * @return bool|\Psr\Http\Message\StreamInterface
+     */
+    protected function getToken(){
+        $client = new \GuzzleHttp\Client();
+        $data =  $client->request('GET', "http://api.actualsales.com.br/join-asbr/ti/token?email={$this->request->email}");
+
+        if($data->getStatusCode()){
+            //return $data->getBody();
+            return 'códio_no_email';
+        }
+
+        return false;
     }
 
     /**
