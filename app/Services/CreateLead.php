@@ -18,8 +18,6 @@ class CreateLead
     public function __construct(Request $request)
     {
         $this->request = $request;
-
-        $this->createLead();
     }
 
     public function createLead()
@@ -36,8 +34,10 @@ class CreateLead
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now()
         ];
-        if(DB::table('leads')->insert($data)){
-            return true;
+        $register = DB::table('leads')->insert($data);
+
+        if($register){
+            //return true;
         }
 
     }
@@ -48,7 +48,7 @@ class CreateLead
      * @return bool|\Psr\Http\Message\StreamInterface
      */
     protected function getToken(){
-        //return 'códio_no_email';
+
         $client = new \GuzzleHttp\Client();
         $data =  $client->request('GET', "http://api.actualsales.com.br/join-asbr/ti/token?email={$this->request->email}");
 

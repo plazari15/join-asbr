@@ -36,6 +36,7 @@ class ApiController extends BaseController
             'regiao' => 'required|numeric',
             'unidade' => 'numeric',
         ]);
+
         $lead = new CreateLead($request);
         if($lead->createLead()){
             return response()->json(['message' => 'tudo certo'], 200);
