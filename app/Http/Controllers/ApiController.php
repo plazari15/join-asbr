@@ -34,7 +34,7 @@ class ApiController extends BaseController
             'telefone' => 'required|numeric',
             'data_nascimento' => 'required|date_format:d/m/Y',
             'regiao' => 'required|numeric',
-            'unidade' => 'required|numeric',
+            'unidade' => 'numeric',
         ]);
         $lead = new CreateLead($request);
         dd($lead->createLead());
