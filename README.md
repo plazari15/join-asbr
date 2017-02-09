@@ -20,3 +20,16 @@ Já tive a oportunidade de trabalhar com o desenvolvimento de plugins e customiz
 Atualmente, curso ciências da computação na USCS, 3º semestre. 
 
 Minha paixão por desenvolvimento web e pelo aprendizado são bem grandes, e por conta disso, eu sempre estou em busca de novos conhecimentos e tecnologias.
+
+## Minhas Redes Sociais
+[Linkedn](https://www.linkedin.com/in/plazari)
+
+[GitHub](https://github.com/plazari15)
+
+[Facebook](https://www.facebook.com/pedroabucarma)
+
+[Twitter](https://twitter.com/plazari15)
+
+[Email](mailto:plazari96@gmail.com)
+
+Skype: pedrolazari15
