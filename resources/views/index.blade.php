@@ -75,13 +75,13 @@
                                     <div class="row form-group">
                                         <div class="col-lg-6">
                                             <label>Região</label>
-                                            <select class="form-control" name="regiao" required>
+                                            <select class="form-control regiao" name="regiao" required>
                                                 <option value="">Selecione a sua região</option>
-                                                <option>Sul</option>
-                                                <option>Sudeste</option>
-                                                <option>Centro-Oeste</option>
-                                                <option>Nordeste</option>
-                                                <option>Norte</option>
+                                                <option value="1">Sul</option>
+                                                <option value="2">Sudeste</option>
+                                                <option value="3">Centro-Oeste</option>
+                                                <option value="4">Nordeste</option>
+                                                <option value="5">Norte</option>
                                             </select>
                                         </div>
 
@@ -123,11 +123,13 @@
         </div>
         <script>
             $(function () {
+                //Pronto
                 $('.next-step').click(function (event) {
                     event.preventDefault();
                     $(this).parents('.form-step').hide().next().show();
                 });
 
+                //Este código se responsabiliza por enviar o form
                 $('#final_step').click(function (event) {
                     event.preventDefault();
                     var form = $('#step_1,#step_2').serialize();
@@ -135,6 +137,25 @@
                     $.ajax({
                         url: '/api/send',
                         data: form,
+                        type: 'POST',
+                        dataType: 'JSON',
+                        beforeSend: function(){
+                            alert('saiu');
+                        },
+                        success: function(){
+                            //
+                        }
+
+                    });
+                });
+
+                //Este código obtem as unidades
+                $('.regiao').change(function () {
+                    var regiao = $(this).serialize();
+                    alert(regiao);
+                    $.ajax({
+                        url: '/api/getRegion',
+                        data: regiao,
                         type: 'POST',
                         dataType: 'JSON',
                         beforeSend: function(){
