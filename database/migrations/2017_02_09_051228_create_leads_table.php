@@ -15,14 +15,14 @@ class CreateLeadsTable extends Migration
     {
         Schema::create('leads', function (Blueprint $table) {
             $table->increments('id');
-            $this->string('nome');
-            $this->string('email');
-            $this->string('telefone');
+            $table->string('nome');
+            $table->string('email');
+            $table->string('telefone');
             $table->enum('regiao', ['Norte', 'Nordeste', 'Sul', 'Sudeste', 'Centro-Oeste']);
             $table->enum('unidade', ["Porto Alegre", "Curitiba", "São Paulo", "Rio de Janeiro", "Belo Horizonte", "Brasília", "Salvador", "Recife", "INDISPONÍVEL"]);
             $table->date('data_nascimento');
             $table->integer('score');
-            $this->string('token');
+            $table->string('token');
             $table->timestamps();
         });
     }

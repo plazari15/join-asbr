@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Services\CreateLead;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Laravel\Lumen\Routing\Controller as BaseController;
@@ -35,6 +36,7 @@ class ApiController extends BaseController
             'regiao' => 'required|numeric',
             'unidade' => 'required|numeric',
         ]);
-        dd($request->all());
+        $lead = new CreateLead($request);
+        dd();
     }
 }
