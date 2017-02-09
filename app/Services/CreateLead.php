@@ -30,7 +30,7 @@ class CreateLead
             'email' => $this->request->email,
             'telefone' => $this->request->telefone,
             'regiao' => $this->getRegiao(),
-            'unidade' => $this->getUnidade()->title,
+            'unidade' => $this->getUnidade(),
         ];
         dd($data);
         //DB::table('leads')->insert();
@@ -152,11 +152,17 @@ class CreateLead
      */
     protected function getUnidade()
     {
-        return DB::table('unity')
+        if($this->request->regiao == '5'){
+            return 'INDISPONÍVEL';
+        }
+
+        $value = DB::table('unity')
             ->where('region_id', $this->request->regiao)
             ->where('id', $this->request->unidade)
             ->select('title')
             ->first();
+
+        return $value->title;
     }
 
 }
