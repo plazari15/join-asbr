@@ -37,6 +37,6 @@ class ApiController extends BaseController
             'unidade' => 'required|numeric',
         ]);
         $lead = new CreateLead($request);
-        dd();
+        dd($lead->getPointsForRegion());
     }
 }
