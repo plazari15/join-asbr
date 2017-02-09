@@ -29,36 +29,41 @@ class CreateLead
             'telefone' => $this->request->telefone,
             'regiao' => $this->getRegiao(),
             'unidade' => $this->getUnidade(),
-            'token' => $this->getToken(),
+            'token' => 'f8d94c0360f0b872662330b593471ff0',
             'score' => $this->getTotalPoints(),
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
         ];
         $register = DB::table('leads')->insert($data);
 
         if($register){
-            //return true;
+            $client = new \GuzzleHttp\Client();
+            $data =  $client->request('POST', "http://api.actualsales.com.br/join-asbr/ti/lead", ['form_params' => $data]);
+
+            if($data->getStatusCode() == 200){
+                return true;
+            }
+
+            return $data->getBody();
         }
 
     }
 
-    /**
-     * O token esta sendo enviado por email, eu tentei de algumas formas obter ele por meio da api, mas o máximo de
-     * dados que consegui receber foi o código e uma mensagem.
-     * @return bool|\Psr\Http\Message\StreamInterface
-     */
-    protected function getToken(){
-
-        $client = new \GuzzleHttp\Client();
-        $data =  $client->request('GET', "http://api.actualsales.com.br/join-asbr/ti/token?email={$this->request->email}");
-
-        if($data->getStatusCode()){
-            //return $data->getBody();
-            return 'códio_no_email';
-        }
-
-        return false;
-    }
+//    /**
+//     * O token esta sendo enviado por email, eu tentei de algumas formas obter ele por meio da api, mas o máximo de
+//     * dados que consegui receber foi o código e uma mensagem.
+//     * @return bool|\Psr\Http\Message\StreamInterface
+//     */
+//    protected function getToken(){
+//
+//        $client = new \GuzzleHttp\Client();
+//        $data =  $client->request('GET', "http://api.actualsales.com.br/join-asbr/ti/token?email={$this->request->email}");
+//
+//        if($data->getStatusCode()){
+//            //return $data->getBody();
+//            return 'códio_no_email';
+//        }
+//
+//        return false;
+//    }
 
     /**
      * Metodo se responsabiliza por executar o cálculo e retornar toda a pontuação que o usuário possuí
